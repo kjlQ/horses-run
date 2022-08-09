@@ -1,8 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import horse from '../assets/horse.png'
-const Horse = ({distance,name}) => {
+import {addToTheScoreBoard} from '../redux/slices/horseSlice'
+import {useDispatch, useSelector} from "react-redux";
+
+const Horse = ({distance,name,timer}) => {
+    const dispatch = useDispatch()
+    useEffect(()=> {
+        if(distance === 1000) {
+            dispatch(addToTheScoreBoard({name, timer}))
+            console.log(timer)
+        }
+    },[distance])
     return(
-        <div className="horse" style={{width:distance+120}}>
+        <div className={`${distance !== 1000 && 'animated'} horse`} style={{width:distance+120}}>
             <img height={70} src={horse} alt=""/>
             <span>{name}</span>
         </div>

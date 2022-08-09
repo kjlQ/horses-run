@@ -1,7 +1,9 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    horses:[]
+    inProgress:null,
+    horses:[],
+    scoreBoard:[]
 }
 
 const horseReducer = createSlice({
@@ -10,10 +12,22 @@ const horseReducer = createSlice({
     reducers: {
         setHorses : (state,action) => {
             state.horses = action.payload
+        },
+        addToTheScoreBoard : (state,action) => {
+            state.scoreBoard = [...state.scoreBoard , action.payload]
+        },
+        changeProgress:(state,action) => {
+            state.inProgress = action.payload
+        },
+        resetScoreboard:(state) => {
+            state.scoreBoard = []
+        },
+        resetHorses:(state) => {
+            state.scoreBoard = []
         }
     },
 })
 
-export const { setHorses } = horseReducer.actions
+export const { setHorses , addToTheScoreBoard ,changeProgress , resetScoreboard , resetHorses} = horseReducer.actions
 
 export default horseReducer.reducer
