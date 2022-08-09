@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+}
+.field {
+  height: 100vh;
+  .horses {
+    padding-top: 170px;
+    min-width: 1150px;
+    margin: auto;
+    position: relative;
+    .horse {
+      text-align: end;
+      transition: 1s;
+      position: relative;
+      img {
+        animation: rotating 2s linear infinite;
+        padding-top: 7px;
+      }
+      span {
+        position: absolute;
+        top: -15px;
+        right: 30px;
+        color: antiquewhite;
+      }
+    }
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-2deg);
+  }
+  60% {
+    transform: rotate(-12deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

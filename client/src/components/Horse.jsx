@@ -1,10 +1,10 @@
 import React from 'react'
 import horse from '../assets/horse.png'
-const Horse = ({distance}) => {
+const Horse = ({distance,name}) => {
     return(
-        <div className="horse" style={{width:distance}}>
+        <div className="horse" style={{width:distance+120}}>
             <img height={70} src={horse} alt=""/>
-            123
+            <span>{name}</span>
         </div>
     )
 }
