@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import React , {useEffect} from "react";
 import './App.css';
+import {io} from "socket.io-client"
+import {useDispatch, useSelector} from "react-redux";
+import {setHorses} from "./redux/slices/horseSlice";
+import Horse from "./components/Horse";
 
 function App() {
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    const socket = io.connect('http://localhost:3002')
+    socket.emit('start');
+    socket.on('ticker',(e)=>dispatch(setHorses(e)))
+  },[])
+  const {horses} = useSelector(state=>state.handler)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React.
-        </a>
-      </header>
+      {horses.map(item=><Horse {...item} />)}
     </div>
   );
 }

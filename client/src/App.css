@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+.horse {
+  text-align: end;
+  transition: 1s;
+}
 
 .App-logo {
   height: 40vmin;
