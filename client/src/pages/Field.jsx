@@ -22,7 +22,7 @@ const Field = () => {
 
     useEffect(()=>{
         if(inProgress) {
-            socket.emit('start');
+            socket.emit('start')
             socket.on('ticker',(e)=>dispatch(setHorses(e)))
         }
     },[inProgress])

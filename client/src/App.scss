@@ -1,75 +1,12 @@
 @import "scss/button";
-.field {
-  height: 100vh;
-  position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  .overlay {
-    height: 100vh;
-    width: 100vw;
-    background: #1b1b1b;
-    position: absolute;
-    top: 0;
-    opacity: 0.7;
-    &__content {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      opacity: 1;
-      transform: translate(-50%, -50%);
-      display: flex;
-      flex-direction: column;
-      color: #fff;
-      font-size: 25px;
-      h1 {
-        text-align: center;
-        width: 300px;
-      }
-      .scoreboard {
-        display: flex;
-        width: 300px;
-        justify-content: space-between;
-      }
-    }
-  }
-  .horses {
-    padding-top: 170px;
-    min-width: 1150px;
-    margin: auto;
-    position: relative;
-    .animated {
-      img {
-        animation: rotating 2s ease-out infinite;
-      }
-    }
-    .horse {
-      text-align: end;
-      transition: 1.5s;
-      position: relative;
-      img {
-        padding-top: 7px;
-      }
-      span {
-        position: absolute;
-        top: -15px;
-        right: 30px;
-        color: antiquewhite;
-      }
-    }
-  }
+@import "scss/field";
+* {
+  padding: 0;
+  margin: 0;
 }
-
-@keyframes rotating {
-  0% {
-    transform: rotate(0deg);
-  }
-  30% {
-    transform: rotate(-2deg);
-  }
-  60% {
-    transform: rotate(-12deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
 }
