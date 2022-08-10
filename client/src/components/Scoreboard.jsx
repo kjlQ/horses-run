@@ -1,7 +1,7 @@
-const Scoreboard = ({name,timer}) => {
+const Scoreboard = ({name,timer,index}) => {
     return(
         <div className="scoreboard">
-            <span>{name}</span>
+            <span>{index+1}.{name}</span>
             <span>{timer}s</span>
         </div>
     )

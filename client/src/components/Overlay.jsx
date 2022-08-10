@@ -18,7 +18,7 @@ const Overlay = () => {
                         :
                         <>
                             <h1>Score</h1>
-                            {scoreBoard.map(item => <Scoreboard {...item}/>)}
+                            {scoreBoard.map((item,index) => <Scoreboard index={index} {...item}/>)}
                         </>
                 }
             </div>
